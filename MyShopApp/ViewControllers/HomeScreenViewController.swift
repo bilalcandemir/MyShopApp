@@ -7,24 +7,62 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController {
+struct Mock {
+    var productName:String
+    var productPrice:Float
+}
 
+class HomeScreenViewController: UIViewController {
+    
+    var dataArray = [Mock]()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
-        let label = UILabel(frame: CGRect.zero)
-        label.text = "Home Screen View Controller"
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.clipsToBounds = true
-        label.sizeToFit()
-        self.view.addSubview(label)
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
-        ])
+        
+        addMockData()
+        
+        setTableView()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+   
+    }
+    
+    func addMockData(){
+        var data = Mock(productName: "Apple Iphone 11", productPrice: 15.050)
+        dataArray.append(data)
+        data = Mock(productName: "Apple MacbookPro", productPrice: 45.000)
+        dataArray.append(data)
+        data = Mock(productName: "Apple Airpods Pro", productPrice: 3.500)
+        dataArray.append(data)
+        data = Mock(productName: "Apple Ipad Air", productPrice: 20.000)
+        dataArray.append(data)
+        
+    }
+    
+    func setTableView(){
+        tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
     }
 
 
+}
+
+extension HomeScreenViewController:UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArray.count
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell") as! ProductCell
+        cell.setCell(item: dataArray[indexPath.row])
+        return cell
+    }
+    
+    
 }
 
