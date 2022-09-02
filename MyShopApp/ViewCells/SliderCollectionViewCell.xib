@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SliderCollectionViewCell" customModule="MyShopApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AK2-00-h5L">
+                        <rect key="frame" x="20" y="20" width="210" height="160"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone13" translatesAutoresizingMaskIntoConstraints="NO" id="BgQ-1M-opN">
+                                <rect key="frame" x="0.0" y="24" width="210" height="112"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iphone 13 Bütün Renkleriyle Sizlerle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3id-T9-aO0">
+                                <rect key="frame" x="10" y="141" width="190" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3id-T9-aO0" firstAttribute="centerX" secondItem="AK2-00-h5L" secondAttribute="centerX" id="0Fj-c8-aLp"/>
+                            <constraint firstItem="BgQ-1M-opN" firstAttribute="width" secondItem="AK2-00-h5L" secondAttribute="width" id="2Fi-0R-GcW"/>
+                            <constraint firstItem="BgQ-1M-opN" firstAttribute="centerY" secondItem="AK2-00-h5L" secondAttribute="centerY" id="B1A-VA-2Lx"/>
+                            <constraint firstItem="BgQ-1M-opN" firstAttribute="height" secondItem="AK2-00-h5L" secondAttribute="height" multiplier="0.7" id="DsM-Xl-2bh"/>
+                            <constraint firstItem="3id-T9-aO0" firstAttribute="leading" secondItem="AK2-00-h5L" secondAttribute="leading" constant="10" id="MZv-8D-W56"/>
+                            <constraint firstItem="3id-T9-aO0" firstAttribute="top" secondItem="BgQ-1M-opN" secondAttribute="bottom" constant="5" id="V9m-SE-UOD"/>
+                            <constraint firstAttribute="trailing" secondItem="3id-T9-aO0" secondAttribute="trailing" constant="10" id="jeY-Pj-Xu8"/>
+                            <constraint firstItem="BgQ-1M-opN" firstAttribute="centerX" secondItem="AK2-00-h5L" secondAttribute="centerX" id="mou-GR-YSJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="AK2-00-h5L" secondAttribute="bottom" constant="20" id="UFX-N6-bR7"/>
+                <constraint firstItem="AK2-00-h5L" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="j8Y-5v-4MD"/>
+                <constraint firstItem="AK2-00-h5L" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="jeB-Ra-nM4"/>
+                <constraint firstAttribute="trailing" secondItem="AK2-00-h5L" secondAttribute="trailing" constant="20" id="sKa-BI-krc"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="BgQ-1M-opN" id="sRt-3q-CyZ"/>
+                <outlet property="labelDescription" destination="3id-T9-aO0" id="rov-BR-CFp"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="135"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="iphone13" width="985" height="739"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
